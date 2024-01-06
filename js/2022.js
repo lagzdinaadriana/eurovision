@@ -1,0 +1,48 @@
+function getSongData(country) {
+      
+    var songs = {
+        "Serbia": { song: "In Corpore Sano", artist: "Konstrakta", videoUrl: "https://www.youtube.com/embed/nBtQj1MfNYA" },
+        "Albania": { song: "Sekret", artist: "Ronela Hajati", videoUrl: "https://www.youtube.com/embed/jWXmo0-ZjI" },
+        "Latvia": { song: "Eat Your Salad", artist: "Citi Zēni", videoUrl: "https://www.youtube.com/embed/TM0_0WfuxSk" },
+        "Lithuania": { song: "Sentimentai", artist: "Monika Liu", videoUrl: "https://www.youtube.com/embed/BVqSTVJhD44" },
+        "Switzerland": { song: "Boys Do Cry", artist: "Marius Bear", videoUrl: "https://www.youtube.com/embed/hq2HCmHv5p4" },
+        "Slovenia": { song: "Disko", artist: "LPS", videoUrl: "https://www.youtube.com/embed/S1tFqoflsT8" },
+        "Ukraine": { song: "Stefania", artist: "Kalush Orchestra", videoUrl: "https://www.youtube.com/embed/F1fl60ypdLs" },
+        "Bulgaria": { song: "Intention", artist: "Intelligent Music Project", videoUrl: "https://www.youtube.com/embed/EwZTI5AoTg4" },
+        "Netherlands": { song: "De diepte", artist: "S10", videoUrl: "https://www.youtube.com/embed/sgOnu7ux2-k" },
+        "Moldova": { song: "Trenulețul", artist: "Zdob și Zdub and Advahov Brothers", videoUrl: "https://www.youtube.com/embed/DUqf_zO2QaI" },
+        "Portugal": { song: "Saudade, saudade", artist: "Maro", videoUrl: "https://www.youtube.com/embed/mZtbD47u6yI" },
+        "Croatia": { song: "Guilty Pleasure", artist: "Mia Dimšić", videoUrl: "https://www.youtube.com/embed/9vBQdtW3mJE" },
+        "Denmark": { song: "The Show", artist: "Reddi", videoUrl: "https://www.youtube.com/embed/cVg6MpVR2Pw" },
+        "Austria": { song: "Halo", artist: "Lumix feat. Pia Maria", videoUrl: "https://www.youtube.com/embed/dMgjHYwXSuo" },
+        "Iceland": { song: "Með hækkandi sól", artist: "Systur", videoUrl: "https://www.youtube.com/embed/G71c48O3j-s" },
+        "Greece": { song: "Die Together", artist: "Amanda Georgiadi Tenfjord", videoUrl: "https://www.youtube.com/embed/BWeT0nJpB3Y" },
+        "Norway": { song: "Give That Wolf a Banana", artist: "Subwoolfer", videoUrl: "https://www.youtube.com/embed/adCU2rQyDeY" },
+        "Armenia": { song: "Snap", artist: "Rosa Linn", videoUrl: "" },
+        "Finland": { song: "Jezebel", artist: "The Rasmus", videoUrl: "" },
+        "Israel": { song: "I.M", artist: "Michael Ben David", videoUrl: "" },
+        "Azerbaijan": { song: "Fade to Black", artist: "Nadir Rustamli", videoUrl: "" },
+        "Georgia": { song: "Lock Me In", artist: "Circus Mircus", videoUrl: "" },
+        "Malta": { song: "Emma Muscat", artist: "I Am What I Am", videoUrl: "" },
+        "San Marino": { song: "Achille Lauro", artist: "Stripper", videoUrl: "" },
+        "Australia": { song: "Not the Same", artist: "Sheldon Riley", videoUrl: "" },
+        "Cyprus": { song: "Ela", artist: "Andromache", videoUrl: "" },
+        "Ireland": { song: "Brooke", artist: "That's Rich", videoUrl: "" },
+        "North Macedonia": { song: "Circles", artist: "Andrea", videoUrl: "" },
+        "Estonia": { song: "Hope", artist: "Stefan", videoUrl: "" },
+        "Romania": { song: "Llámame", artist: "Wrs", videoUrl: "" },
+        "Poland": { song: "River", artist: "Ochman", videoUrl: "" },
+        "Montenegro": { song: "Breathe", artist: "Vladana", videoUrl: "" },
+        "Belgium": { song: "Miss You", artist: "Jérémie Makiese", videoUrl: "" },
+        "Sweden": { song: "Hold Me Closer", artist: "Cornelia Jakobs", videoUrl: "" },
+        "Czech Republic": { song: "Lights Off", artist: "We Are Domi", videoUrl: "" },
+        "France": { song: "Fulenn", artist: "Alvan and Ahez", videoUrl: "" },
+        "Italy": { song: "Brividi", artist: "Mahmood and Blanco", videoUrl: "" },
+        "Spain": { song: "SloMo", artist: "Chanel", videoUrl: "" },
+        "Germany": { song: "Rockstars", artist: "Malik Harris", videoUrl: "" },
+        "United Kingdom": { song: "Space Man", artist: "Sam Ryder", videoUrl: "" },
+    
+    };
+  
+    return songs[country];
+}
