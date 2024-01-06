@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eurovision Archive</title>
+    <style>
+        body {
+            background-color: #001f3f; 
+            color: #fff; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        ul {
+            list-style: none;
+        }
+    </style>
+   </head>
+<body>
+   
+
+
+    <header>
+        <h1 style="font-size:60px;">Eurovision Archive</h1>
+        <h2>Find all Eurovision performances in one place!</h2>
+    </header>
+    <div class="container">
+        <button id="showCountriesButton">2023</button>
+        <button id="showCountriesButton2022">2022</button>
+        <div id="countriesContainer" style="display: none;">
+            <h1>2023</h1>
+            <ul>
+                <li data-country="Serbia">Serbia</li>
+                <li data-country="Finland">Finland</li>
+                <li data-country="Czechia">Czechia</li>
+                <li data-country="Norway">Norway</li>
+                <li data-country="Malta">Malta</li>
+                <li data-country="Latvia">Latvia</li>
+                <li data-country="Portugal">Portugal</li>
+                <li data-country="Ireland">Ireland</li>
+                <li data-country="Croatia">Croatia</li>
+                <li data-country="Switzerland">Switzerland</li>
+                <li data-country="Israel">Israel</li>
+                <li data-country="Moldova">Moldova</li>
+                <li data-country="Sweden">Sweden</li>
+                <li data-country="Azerbaijan">Azerbaijan</li>
+                <li data-country="Netherlands">Netherlands</li>
+                <li data-country="Denmark">Denmark</li>
+                <li data-country="Armenia">Armenia</li>
+                <li data-country="Romania">Romania</li>
+                <li data-country="Estonia">Estonia</li>
+                <li data-country="Belgium">Belgium</li>
+                <li data-country="Cyprus">Cyprus</li>
+                <li data-country="Iceland">Iceland</li>
+                <li data-country="Greece">Greece</li>
+                <li data-country="Poland">Poland</li>
+                <li data-country="Slovenia">Slovenia</li>
+                <li data-country="Georgia">Georgia</li>
+                <li data-country="San Marino">San Marino</li>
+                <li data-country="Austria">Austria</li>
+                <li data-country="Albania">Albania</li>
+                <li data-country="Lithuania">Lithuania</li>
+                <li data-country="Australia">Australia</li>
+                <li data-country="France">France</li>
+                <li data-country="Spain">Spain</li>
+                <li data-country="Italy">Italy</li>
+                <li data-country="Ukraine">Ukraine</li>
+                <li data-country="Germany">Germany</li>
+                <li data-country="United Kingdom">United Kingdom</li>
+            </ul>
+            <div id="songInfo" style="display: none;">
+                <h2>Song Information</h2>
+                <p id="songName"></p>
+                <p id="artistName"></p>
+                <div id="youtubeVideo">YouTube video placeholder</div>
+            </div>
+        </div>
+
+        <div id="countriesContainer2022" style="display: none;">
+            <h1>2022</h1>
+            <ul>
+                <li data-country="Serbia">Serbia</li>
+                <li data-country="Albania">Albania</li>
+                <li data-country="Latvia">Latvia</li>
+                <li data-country="Lithuania">Lithuania</li>
+                <li data-country="Switzerland">Switzerland</li>
+                <li data-country="Slovenia">Slovenia</li>
+                <li data-country="Ukraine">Ukraine</li>
+                <li data-country="Bulgaria">Bulgaria</li>
+                <li data-country="Netherlands">Netherlands</li>
+                <li data-country="Moldova">Moldova</li>
+                <li data-country="Portugal">Portugal</li>
+                <li data-country="Croatia">Croatia</li>
+                <li data-country="Denmark">Denmark</li>
+                <li data-country="Austria">Austria</li>
+                <li data-country="Iceland">Iceland</li>
+                <li data-country="Greece">Greece</li>
+                <li data-country="Norway">Norway</li>
+                <li data-country="Armenia">Armenia</li>
+                <li data-country="Finland">Finland</li>
+                <li data-country="Israel">Israel</li>
+                <li data-country="Azerbaijan">Azerbaijan</li>
+                <li data-country="Georgia">Georgia</li>
+                <li data-country="Malta">Malta</li>
+                <li data-country="San Marino">San Marino</li>
+                <li data-country="Australia">Australia</li>
+                <li data-country="Cyprus">Cyprus</li>
+                <li data-country="Ireland">Ireland</li>
+                <li data-country="North Macedonia">North Macedonia</li>
+                <li data-country="Estonia">Estonia</li>
+                <li data-country="Romania">Romania</li>
+                <li data-country="Poland">Poland</li>
+                <li data-country="Montenegro">Montenegro</li>
+                <li data-country="Belgium">Belgium</li>
+                <li data-country="Sweden">Sweden</li>
+                <li data-country="Czech Republic">Czech Republic</li>
+                <li data-country="France">France</li>
+                <li data-country="Italy">Italy</li>
+                <li data-country="Spain">Spain</li>
+                <li data-country="Germany">Germany</li>
+                <li data-country="United Kingdom">United Kingdom</li>
+            </ul>
+            <div id="songInfo2022" style="display: none;">
+                <p id="songName2022"></p>
+                <p id="artistName2022"></p>
+                <div id="youtubeVideo2022">YouTube video placeholder</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var showCountriesButton = document.getElementById("showCountriesButton");
+        var countriesContainer = document.getElementById("countriesContainer");
+        var songInfo = document.getElementById("songInfo");
+        var songName = document.getElementById("songName");
+        var artistName = document.getElementById("artistName");
+        var youtubeVideo = document.getElementById("youtubeVideo");
+
+        showCountriesButton.addEventListener("click", function() {            
+            countriesContainer.style.display = "block";
+            countriesContainer2022.style.display = "none";
+        });
+
+       
+        var countryListItems = document.querySelectorAll('#countriesContainer ul li[data-country]');
+        countryListItems.forEach(function(item) {
+            item.addEventListener("click", function() {
+                var countryName = item.getAttribute("data-country");
+                var songData = getSongData(countryName);
+                
+                displaySongInfo(songData);
+            });
+        });
+
+        function getSongData(country) {           
+            var songs = {
+                "Serbia": { song: "Samo mi se spava", artist: "Luke Black", videoUrl: "https://www.youtube.com/embed/gPRfg9wzbpw" },
+                "Finland": { song: "Cha Cha Cha", artist: "Käärijä", videoUrl: "https://www.youtube.com/embed/l6rS8Dv5g-8" },
+                "Czechia": { song: "My Sister's Crown", artist: "Vesna", videoUrl: "https://www.youtube.com/embed/ag8qxpvTTy0" },
+                "Norway": { song: "Queen of Kings", artist: "Alessandra", videoUrl: "https://www.youtube.com/embed/PUHSM_vTqTI" },
+                "Malta": { song: "Dance (Our Own Party)", artist: "The Busker", videoUrl: "https://www.youtube.com/embed/zVmVt9qmg9g" },
+                "Latvia": { song: "Aijā", artist: "Sudden Lights", videoUrl: "https://www.youtube.com/embed/SEykwl9X9SY" },
+                "Portugal": { song: "Ai coração", artist: "Mimicat", videoUrl: "https://www.youtube.com/embed/HYfkxX4PFyw" },
+                "Ireland": { song: "We Are One", artist: "Wild Youth", videoUrl: "https://www.youtube.com/embed/80-4_rjW10U" },
+                "Croatia": { song: "Mama ŠČ!", artist: "Let 3", videoUrl: "https://www.youtube.com/embed/JPiY1v3EfNc" },
+                "Switzerland": { song: "Watergun", artist: "Remo Forrer", videoUrl: "https://www.youtube.com/embed/l4NDErv49mk" },
+                "Israel": { song: "Unicorn", artist: "Noa Kirel", videoUrl: "https://www.youtube.com/embed/Z3mIcCllJXY" },
+                "Moldova": { song: "Soarele și luna", artist: "Pasha Parfeni", videoUrl: "https://www.youtube.com/embed/SABOfYgGk8M" },
+                "Sweden": { song: "Tattoo", artist: "Loreen", videoUrl: "https://www.youtube.com/embed/BE2Fj0W4jP4" },
+                "Azerbaijan": { song: "Tell Me More", artist: "TuralTuranX", videoUrl: "https://www.youtube.com/embed/8BNtaW1IEtA" },
+                "Netherlands": { song: "Burning Daylight", artist: "Mia Nicolai and Dion Cooper", videoUrl: "https://www.youtube.com/embed/UOf-oKDlO6A" },
+                "Denmark": { song: "Breaking My Heart", artist: "Reiley", videoUrl: "https://www.youtube.com/embed/XVZvzZF1JOk" },
+                "Armenia": { song: "Future Lover", artist: "Brunette", videoUrl: "https://www.youtube.com/embed/h0q7AkYk2hY" },
+                "Romania": { song: "D.G.T. (Off and On)", artist: "Theodor Andrei", videoUrl: "https://www.youtube.com/embed/Bf3iPXU1RYU" },
+                "Estonia": { song: "Bridges", artist: "Alika", videoUrl: "https://www.youtube.com/embed/HsbC-OYMA3s" },
+                "Belgium": { song: "Because of You", artist: "Gustaph", videoUrl: "https://www.youtube.com/embed/U1xD14IMKtg" },
+                "Cyprus": { song: "Break a Broken Heart", artist: "Andrew Lambrou", videoUrl: "https://www.youtube.com/embed/49YiimKeyDI" },
+                "Iceland": { song: "Power", artist: "Diljá", videoUrl: "https://www.youtube.com/embed/lzlTcA0OC5s" },
+                "Greece": { song: "What They Say", artist: "Victor Vernicos", videoUrl: "https://www.youtube.com/embed/gJSZA0Zh2xU" },
+                "Poland": { song: "Solo", artist: "Blanka", videoUrl: "https://www.youtube.com/embed/SEgF1aP-U1o" },
+                "Slovenia": { song: "Carpe Diem", artist: "Joker Out", videoUrl: "https://www.youtube.com/embed/3LXlPviGiWc" },
+                "Georgia": { song: "Echo", artist: "Iru", videoUrl: "https://www.youtube.com/embed/HNvGZeEQvfc" },
+                "San Marino": { song: "Like an Animal", artist: "Piqued Jacks", videoUrl: "https://www.youtube.com/embed/pIdHjcqyLfo" },
+                "Austria": { song: "Who the Hell Is Edgar?", artist: "Teya and Salena", videoUrl: "https://www.youtube.com/embed/8uk64V9h0Ko" },
+                "Albania": { song: "Duje", artist: "Albina and Familja Kelmendi", videoUrl: "https://www.youtube.com/embed/748J3WWznds" },
+                "Lithuania": { song: "Stay", artist: "Monika Linkytė", videoUrl: "https://www.youtube.com/embed/QsgouAEd34U" },
+                "Australia": { song: "Promise", artist: "Voyager", videoUrl: "https://www.youtube.com/embed/GSoy_mJMlMY" },
+                "France": { song: "Évidemment", artist: "La Zarra", videoUrl: "https://www.youtube.com/embed/fOtQJ4o-HoA" },
+                "Spain": { song: "Eaea", artist: "Blanca Paloma", videoUrl: "https://www.youtube.com/embed/Vw6qPWhjevk" },
+                "Italy": { song: "Due vite", artist: "Marco Mengoni", videoUrl: "https://www.youtube.com/embed/d6IiOSut_4M" },
+                "Ukraine": { song: "Heart of Steel", artist: "Tvorchi", videoUrl: "https://www.youtube.com/embed/I2oqDpefJ1s" },
+                "Germany": { song: "Blood & Glitter", artist: "Lord of the Lost", videoUrl: "https://www.youtube.com/embed/dyGR4YWlPEs" },
+                "United Kingdom": { song: "I Wrote a Song", artist: "Mae Muller", videoUrl: "https://www.youtube.com/embed/tvJEE2ryCRQ" },
+
+            };
+            return songs[country];
+        }
+
+
+
+    var showCountriesButton2022 = document.getElementById("showCountriesButton2022");
+    var countriesContainer2022 = document.getElementById("countriesContainer2022");
+    var songInfo2022 = document.getElementById("songInfo2022");
+    var songName2022 = document.getElementById("songName2022");
+    var artistName2022 = document.getElementById("artistName2022");
+    var youtubeVideo2022 = document.getElementById("youtubeVideo2022");
+
+    showCountriesButton2022.addEventListener("click", function() {       
+            countriesContainer2022.style.display = "block";
+            countriesContainer.style.display = "none";
+         });
+
+      var countryListItems2022 = document.querySelectorAll('#countriesContainer2022 ul li[data-country]');
+                countryListItems2022.forEach(function(item) {   
+                    item.addEventListener("click", function() {
+                        var countryName = item.getAttribute("data-country");
+                        var songData = getSongData2022(countryName);
+                        displaySongInfo2022(songData);
+                    });
+                });
+
+    function getSongData2022(country) {
+      
+        var songs2022 = {
+            "Serbia": { song: "In Corpore Sano", artist: "Konstrakta", videoUrl: "https://www.youtube.com/embed/nBtQj1MfNYA" },
+            "Albania": { song: "Sekret", artist: "Ronela Hajati", videoUrl: "https://www.youtube.com/embed/jWXmo0-ZjI" },
+            "Latvia": { song: "Eat Your Salad", artist: "Citi Zēni", videoUrl: "https://www.youtube.com/embed/TM0_0WfuxSk" },
+            "Lithuania": { song: "Sentimentai", artist: "Monika Liu", videoUrl: "https://www.youtube.com/embed/BVqSTVJhD44" },
+            "Switzerland": { song: "Boys Do Cry", artist: "Marius Bear", videoUrl: "https://www.youtube.com/embed/hq2HCmHv5p4" },
+            "Slovenia": { song: "Disko", artist: "LPS", videoUrl: "https://www.youtube.com/embed/S1tFqoflsT8" },
+            "Ukraine": { song: "Stefania", artist: "Kalush Orchestra", videoUrl: "https://www.youtube.com/embed/F1fl60ypdLs" },
+            "Bulgaria": { song: "Intention", artist: "Intelligent Music Project", videoUrl: "https://www.youtube.com/embed/EwZTI5AoTg4" },
+            "Netherlands": { song: "De diepte", artist: "S10", videoUrl: "https://www.youtube.com/embed/sgOnu7ux2-k" },
+            "Moldova": { song: "Trenulețul", artist: "Zdob și Zdub and Advahov Brothers", videoUrl: "https://www.youtube.com/embed/DUqf_zO2QaI" },
+            "Portugal": { song: "Saudade, saudade", artist: "Maro", videoUrl: "https://www.youtube.com/embed/mZtbD47u6yI" },
+            "Croatia": { song: "Guilty Pleasure", artist: "Mia Dimšić", videoUrl: "https://www.youtube.com/embed/9vBQdtW3mJE" },
+            "Denmark": { song: "The Show", artist: "Reddi", videoUrl: "https://www.youtube.com/embed/cVg6MpVR2Pw" },
+            "Austria": { song: "Halo", artist: "Lumix feat. Pia Maria", videoUrl: "https://www.youtube.com/embed/dMgjHYwXSuo" },
+            "Iceland": { song: "Með hækkandi sól", artist: "Systur", videoUrl: "https://www.youtube.com/embed/G71c48O3j-s" },
+            "Greece": { song: "Die Together", artist: "Amanda Georgiadi Tenfjord", videoUrl: "https://www.youtube.com/embed/BWeT0nJpB3Y" },
+            "Norway": { song: "Give That Wolf a Banana", artist: "Subwoolfer", videoUrl: "https://www.youtube.com/embed/adCU2rQyDeY" },
+            "Armenia": { song: "Snap", artist: "Rosa Linn", videoUrl: "" },
+            "Finland": { song: "Jezebel", artist: "The Rasmus", videoUrl: "" },
+            "Israel": { song: "I.M", artist: "Michael Ben David", videoUrl: "" },
+            "Azerbaijan": { song: "Fade to Black", artist: "Nadir Rustamli", videoUrl: "" },
+            "Georgia": { song: "Lock Me In", artist: "Circus Mircus", videoUrl: "" },
+            "Malta": { song: "Emma Muscat", artist: "I Am What I Am", videoUrl: "" },
+            "San Marino": { song: "Achille Lauro", artist: "Stripper", videoUrl: "" },
+            "Australia": { song: "Not the Same", artist: "Sheldon Riley", videoUrl: "" },
+            "Cyprus": { song: "Ela", artist: "Andromache", videoUrl: "" },
+            "Ireland": { song: "Brooke", artist: "That's Rich", videoUrl: "" },
+            "North Macedonia": { song: "Circles", artist: "Andrea", videoUrl: "" },
+            "Estonia": { song: "Hope", artist: "Stefan", videoUrl: "" },
+            "Romania": { song: "Llámame", artist: "Wrs", videoUrl: "" },
+            "Poland": { song: "River", artist: "Ochman", videoUrl: "" },
+            "Montenegro": { song: "Breathe", artist: "Vladana", videoUrl: "" },
+            "Belgium": { song: "Miss You", artist: "Jérémie Makiese", videoUrl: "" },
+            "Sweden": { song: "Hold Me Closer", artist: "Cornelia Jakobs", videoUrl: "" },
+            "Czech Republic": { song: "Lights Off", artist: "We Are Domi", videoUrl: "" },
+            "France": { song: "Fulenn", artist: "Alvan and Ahez", videoUrl: "" },
+            "Italy": { song: "Brividi", artist: "Mahmood and Blanco", videoUrl: "" },
+            "Spain": { song: "SloMo", artist: "Chanel", videoUrl: "" },
+            "Germany": { song: "Rockstars", artist: "Malik Harris", videoUrl: "" },
+            "United Kingdom": { song: "Space Man", artist: "Sam Ryder", videoUrl: "" },
+        
+        };
+      
+        return songs2022[country];
+    }
+
+    function displaySongInfo2022(songData) {     
+        songName2022.textContent = songData.song;
+        artistName2022.textContent = songData.artist;
+        youtubeVideo2022.innerHTML = '<iframe width="560" height="315" src="' + songData.videoUrl + '" frameborder="0" allowfullscreen></iframe>';
+        songInfo2022.style.display = "block";
+    }
+            
+
+    
+        function displaySongInfo(songData) {
+            songName.textContent = songData.song;
+            artistName.textContent = songData.artist;
+            youtubeVideo.innerHTML = '<iframe width="560" height="315" src="' + songData.videoUrl + '" frameborder="0" allowfullscreen></iframe>';
+            songInfo.style.display = "block";
+        }
+    </script>
+</body>
+</html>

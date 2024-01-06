@@ -1,0 +1,45 @@
+
+function getSongData(country) {           
+    var songs = {
+        "Serbia": { song: "Samo mi se spava", artist: "Luke Black", videoUrl: "https://www.youtube.com/embed/gPRfg9wzbpw" },
+        "Finland": { song: "Cha Cha Cha", artist: "Käärijä", videoUrl: "https://www.youtube.com/embed/l6rS8Dv5g-8" },
+        "Czechia": { song: "My Sister's Crown", artist: "Vesna", videoUrl: "https://www.youtube.com/embed/ag8qxpvTTy0" },
+        "Norway": { song: "Queen of Kings", artist: "Alessandra", videoUrl: "https://www.youtube.com/embed/PUHSM_vTqTI" },
+        "Malta": { song: "Dance (Our Own Party)", artist: "The Busker", videoUrl: "https://www.youtube.com/embed/zVmVt9qmg9g" },
+        "Latvia": { song: "Aijā", artist: "Sudden Lights", videoUrl: "https://www.youtube.com/embed/SEykwl9X9SY" },
+        "Portugal": { song: "Ai coração", artist: "Mimicat", videoUrl: "https://www.youtube.com/embed/HYfkxX4PFyw" },
+        "Ireland": { song: "We Are One", artist: "Wild Youth", videoUrl: "https://www.youtube.com/embed/80-4_rjW10U" },
+        "Croatia": { song: "Mama ŠČ!", artist: "Let 3", videoUrl: "https://www.youtube.com/embed/JPiY1v3EfNc" },
+        "Switzerland": { song: "Watergun", artist: "Remo Forrer", videoUrl: "https://www.youtube.com/embed/l4NDErv49mk" },
+        "Israel": { song: "Unicorn", artist: "Noa Kirel", videoUrl: "https://www.youtube.com/embed/Z3mIcCllJXY" },
+        "Moldova": { song: "Soarele și luna", artist: "Pasha Parfeni", videoUrl: "https://www.youtube.com/embed/SABOfYgGk8M" },
+        "Sweden": { song: "Tattoo", artist: "Loreen", videoUrl: "https://www.youtube.com/embed/BE2Fj0W4jP4" },
+        "Azerbaijan": { song: "Tell Me More", artist: "TuralTuranX", videoUrl: "https://www.youtube.com/embed/8BNtaW1IEtA" },
+        "Netherlands": { song: "Burning Daylight", artist: "Mia Nicolai and Dion Cooper", videoUrl: "https://www.youtube.com/embed/UOf-oKDlO6A" },
+        "Denmark": { song: "Breaking My Heart", artist: "Reiley", videoUrl: "https://www.youtube.com/embed/XVZvzZF1JOk" },
+        "Armenia": { song: "Future Lover", artist: "Brunette", videoUrl: "https://www.youtube.com/embed/h0q7AkYk2hY" },
+        "Romania": { song: "D.G.T. (Off and On)", artist: "Theodor Andrei", videoUrl: "https://www.youtube.com/embed/Bf3iPXU1RYU" },
+        "Estonia": { song: "Bridges", artist: "Alika", videoUrl: "https://www.youtube.com/embed/HsbC-OYMA3s" },
+        "Belgium": { song: "Because of You", artist: "Gustaph", videoUrl: "https://www.youtube.com/embed/U1xD14IMKtg" },
+        "Cyprus": { song: "Break a Broken Heart", artist: "Andrew Lambrou", videoUrl: "https://www.youtube.com/embed/49YiimKeyDI" },
+        "Iceland": { song: "Power", artist: "Diljá", videoUrl: "https://www.youtube.com/embed/lzlTcA0OC5s" },
+        "Greece": { song: "What They Say", artist: "Victor Vernicos", videoUrl: "https://www.youtube.com/embed/gJSZA0Zh2xU" },
+        "Poland": { song: "Solo", artist: "Blanka", videoUrl: "https://www.youtube.com/embed/SEgF1aP-U1o" },
+        "Slovenia": { song: "Carpe Diem", artist: "Joker Out", videoUrl: "https://www.youtube.com/embed/3LXlPviGiWc" },
+        "Georgia": { song: "Echo", artist: "Iru", videoUrl: "https://www.youtube.com/embed/HNvGZeEQvfc" },
+        "San Marino": { song: "Like an Animal", artist: "Piqued Jacks", videoUrl: "https://www.youtube.com/embed/pIdHjcqyLfo" },
+        "Austria": { song: "Who the Hell Is Edgar?", artist: "Teya and Salena", videoUrl: "https://www.youtube.com/embed/8uk64V9h0Ko" },
+        "Albania": { song: "Duje", artist: "Albina and Familja Kelmendi", videoUrl: "https://www.youtube.com/embed/748J3WWznds" },
+        "Lithuania": { song: "Stay", artist: "Monika Linkytė", videoUrl: "https://www.youtube.com/embed/QsgouAEd34U" },
+        "Australia": { song: "Promise", artist: "Voyager", videoUrl: "https://www.youtube.com/embed/GSoy_mJMlMY" },
+        "France": { song: "Évidemment", artist: "La Zarra", videoUrl: "https://www.youtube.com/embed/fOtQJ4o-HoA" },
+        "Spain": { song: "Eaea", artist: "Blanca Paloma", videoUrl: "https://www.youtube.com/embed/Vw6qPWhjevk" },
+        "Italy": { song: "Due vite", artist: "Marco Mengoni", videoUrl: "https://www.youtube.com/embed/d6IiOSut_4M" },
+        "Ukraine": { song: "Heart of Steel", artist: "Tvorchi", videoUrl: "https://www.youtube.com/embed/I2oqDpefJ1s" },
+        "Germany": { song: "Blood & Glitter", artist: "Lord of the Lost", videoUrl: "https://www.youtube.com/embed/dyGR4YWlPEs" },
+        "United Kingdom": { song: "I Wrote a Song", artist: "Mae Muller", videoUrl: "https://www.youtube.com/embed/tvJEE2ryCRQ" },
+
+    };
+    return songs[country];
+}
+
